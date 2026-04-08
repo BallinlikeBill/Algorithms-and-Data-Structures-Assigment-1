@@ -9,3 +9,10 @@ model = AutoModelForCausalLM.from_pretrained(
     model_name, tie_word_embeddings=False
 )
 model.eval()
+
+filename = input("Enter file name: ")
+with open(filename, "r") as f:
+    text = f.read()
+
+tokens = tokenizer(text).input_ids
+
