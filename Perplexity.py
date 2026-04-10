@@ -10,6 +10,7 @@ parser.add_argument("--begin-context-tokens",help="the number of pieces to be us
                      type=int, default=512)
 parser.add_argument("input_file", type=str, help='the file where the computing perplexity is evaluated')
 parser.add_argument("output_file", type=str, help="the file in which the program results will be saved")
+args = parser.parse_args()
 
 model_name = "facebook/opt-125m"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -23,4 +24,9 @@ with open(filename, "r") as f:
     text = f.read()
 
 tokens = tokenizer(text).input_ids
+
+bos_token = tokenizer.bos_token_id
+n_ctx = args.n_ctx
+stride = args.stride
+begin_context_tokens = args.begin_context_tokens
 
