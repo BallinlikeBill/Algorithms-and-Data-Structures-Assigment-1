@@ -8,8 +8,8 @@ parser.add_argument("--stride",help="Stride size for moving window", type=int, d
 parser.add_argument("--n-ctx",help="the window size", type=int, default=2048)
 parser.add_argument("--begin-context-tokens",help="the number of pieces to be used as content in the first window",
                      type=int, default=512)
-parser.add_argument('input_file', type=str, help='the file where the computing perplexity is evaluated')
-parser.add_argument("--output_file", type=str, help="the file in which the program results will be saved")
+parser.add_argument("input_file", type=str, help='the file where the computing perplexity is evaluated')
+parser.add_argument("output_file", type=str, help="the file in which the program results will be saved")
 
 model_name = "facebook/opt-125m"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
