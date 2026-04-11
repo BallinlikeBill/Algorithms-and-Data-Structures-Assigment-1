@@ -19,7 +19,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 model.eval()
 
-filename = input("Enter file name: ")
+filename = args.input_file
 with open(filename, "r") as f:
     text = f.read()
 
