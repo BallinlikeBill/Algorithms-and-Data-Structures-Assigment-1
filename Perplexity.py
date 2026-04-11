@@ -30,3 +30,4 @@ n_ctx = args.n_ctx
 stride = args.stride
 begin_context_tokens = args.begin_context_tokens
 
+for i in range(0, len(tokens), stride):
